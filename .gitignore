@@ -1,0 +1,33 @@
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Node and Python caches
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pytest-*/
+.pytest-diagnostics/
+.pytest-tmp-settings/
+backend/tests/.settings-*.json
+
+# Generated release and acceptance output
+dist/
+tmp/
+*.log
+
+# Workspace-only planning and scratch files
+.planning/
+.superpowers/
+docs/superpowers/
+learning/
+findings.md
+progress.md
+task_plan.md
+4096*

@@ -1,0 +1,11 @@
+{
+  "name": "xhs-task-material-collector",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Task-scoped material collector for visible Xiaohongshu web notes.",
+  "scripts": {
+    "build:background": "node scripts/build-background-bundle.mjs",
+    "package:local": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package-local-preview.ps1",
+    "test": "node --test --test-isolation=none tests/*.test.js"
+  }
+}

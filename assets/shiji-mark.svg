@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="title">
+  <title id="title">拾集像素书本标志</title>
+  <g shape-rendering="crispEdges">
+    <path fill="#2d2521" d="M8 6h27v3h4v29h-4v4H12v-3H8z"/>
+    <path fill="#9f2d28" d="M11 9h8v29h-8z"/>
+    <path fill="#c94b39" d="M14 11h5v24h-5z"/>
+    <path fill="#f7eee3" d="M19 9h16v4h-3v4h3v4h-4v4h4v4h-3v4h3v5H19z"/>
+    <path fill="#d8c8b7" d="M22 12h10v2H22zm0 7h9v2h-9zm0 7h10v2H22zm0 7h9v2h-9z"/>
+    <path fill="#2d2521" d="M22 15h7v2h-7zm0 7h6v2h-6zm0 7h7v2h-7z"/>
+    <path fill="#f7eee3" d="M35 12h2v23h-2z"/>
+    <path fill="#6c873f" d="M15 15h2v8h-2z"/>
+  </g>
+</svg>

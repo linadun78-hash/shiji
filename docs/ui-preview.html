@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>拾集 UI Preview</title>
+  <link rel="stylesheet" href="../src/content.css">
+  <link rel="stylesheet" href="../src/export-rgb.css">
+  <style>
+    body { margin: 0; min-height: 100vh; background: #171717; color: #eee; font-family: system-ui, sans-serif; }
+    .preview-note { width: min(760px, calc(100% - 48px)); margin: 64px auto; padding: 32px; border-radius: 12px; background: #292929; }
+    .preview-note h1 { margin-top: 0; }
+    .preview-note p { max-width: 60ch; color: #c7c7c7; line-height: 1.8; }
+  </style>
+</head>
+<body>
+  <main class="preview-note">
+    <h1>小红书页面场景预览</h1>
+    <p>右侧抽屉加载的是项目真实的 content.js 和 content.css。本页仅模拟扩展存储，便于检查视觉、滚动和交互状态。</p>
+    <p><a href="?account=cloud">查看云端账号预览</a></p>
+    <p><a href="?report=tutorial">查看教程拆解预览</a></p>
+  </main>
+  <script>
+    const previewStore = {
+      xhsCollectorState: {
+        version: 1,
+        currentTaskId: 'task-1',
+        tasks: [{ id: 'task-1', name: '深圳周末旅行', createdAt: '2026-08-11T10:00:00.000Z' }],
+        materials: [
+          { id: 'm1', taskId: 'task-1', title: 'OCT-LOFT 周末漫步路线', author: '深圳艺术地图', bodyText: '创意园上午人流较少，适合看展和拍摄。', sourceUrl: 'https://www.xiaohongshu.com/explore/demo1', openUrl: 'https://www.xiaohongshu.com/explore/demo1', coverUrl: '', contentHash: 'v1-11111111', captureStatus: 'complete', missingFields: [], capturedAt: '2026-08-11T10:24:00.000Z', pageSignature: 'xhs:demo1' },
+          { id: 'm2', taskId: 'task-1', title: '海上世界夜景与餐厅', author: '城市散步指南', bodyText: '晚上可以看夜景并用餐，高峰期需要提前核实营业时间。', sourceUrl: 'https://www.xiaohongshu.com/explore/demo2', openUrl: 'https://www.xiaohongshu.com/explore/demo2', coverUrl: '', contentHash: 'v1-22222222', captureStatus: 'complete', missingFields: [], capturedAt: '2026-08-10T15:30:00.000Z', pageSignature: 'xhs:demo2' },
+          { id: 'm3', taskId: 'task-1', title: '深圳两日餐饮预算记录', author: '周末旅行记', bodyText: '两日餐饮费用约 800 元，热门餐厅建议预约。', sourceUrl: 'https://www.xiaohongshu.com/explore/demo3', openUrl: 'https://www.xiaohongshu.com/explore/demo3', coverUrl: '', contentHash: 'v1-33333333', captureStatus: 'complete', missingFields: [], capturedAt: '2026-08-09T09:15:00.000Z', pageSignature: 'xhs:demo3' },
+        ],
+      },
+      xhsAnalysisState: {
+        version: 1,
+        enabled: true,
+        consentedAt: '2026-08-11T10:00:00.000Z',
+        records: [
+          { materialId: 'm1', contentHash: 'v1-11111111', status: 'succeeded', brief: { oneLineSummary: '整理 OCT-LOFT 的参观理由与时段建议。', evidence: [{ id: 'E1', quote: '上午人流较少，适合看展和拍摄。' }] } },
+          { materialId: 'm2', contentHash: 'v1-22222222', status: 'succeeded', brief: { oneLineSummary: '整理海上世界夜景与用餐信息。', evidence: [{ id: 'E1', quote: '高峰期需要提前核实营业时间。' }] } },
+          { materialId: 'm3', contentHash: 'v1-33333333', status: 'succeeded', brief: { oneLineSummary: '记录两日餐饮预算。', evidence: [{ id: 'E1', quote: '两日餐饮费用约 800 元。' }] } },
+        ],
+      },
+      xhsPurposeReportState: {
+        version: 1,
+        reports: [{
+          taskId: 'task-1', status: 'succeeded', error: null, reportId: 'report-1', sourceRevision: 'rev-ui-1ae372f4',
+          selectedMaterialIds: ['m1', 'm2', 'm3'], reportPreset: 'travel', goal: '规划深圳两天周末旅行', constraints: ['预算不超过 3000 元', '家庭出行'], goalUnderstanding: '规划深圳两天周末旅行，优先艺术、城市漫步与当地美食。', executiveSummary: '先按地理顺序安排白天参观与晚间用餐，再在出发前核实营业时间、住宿地址和预算。',
+          themes: [{ text: 'OCT-LOFT 适合上午参观，可以减少排队并保留拍摄时间。', citationIds: ['C1'] }, { text: '海上世界适合晚间用餐和看夜景。', citationIds: ['C2'] }, { text: '预计两日餐饮费用 800 元。', citationIds: ['C3'] }],
+          conflicts: [{ text: '海上世界热门餐厅的营业时间在素材中未明确，需出发前确认。', citationIds: ['C2'] }], informationGaps: ['住宿地址尚未确认', '未确认热门餐厅是否需要预约'],
+          nextActions: [{ text: '上午前往 OCT-LOFT 参观展览与创意园。', citationIds: ['C1'] }, { text: '下午安排周边城市漫步，根据现场时间调整。', citationIds: ['C1'] }, { text: '晚上到海上世界用餐并看夜景。', citationIds: ['C2'] }],
+          citations: [{ id: 'C1', materialId: 'm1', evidenceIds: ['E1'] }, { id: 'C2', materialId: 'm2', evidenceIds: ['E1'] }, { id: 'C3', materialId: 'm3', evidenceIds: ['E1'] }],
+          confidence: 'medium', modelVersion: 'preview', generatedAt: '2026-08-11T11:00:00.000Z', updatedAt: '2026-08-11T11:00:00.000Z',
+        }],
+      },
+    };
+    const previewParams = new URLSearchParams(window.location.search);
+    const cloudAccountPreview = previewParams.get('account') === 'cloud';
+    const tutorialReportPreview = previewParams.get('report') === 'tutorial';
+    if (tutorialReportPreview) {
+      previewStore.xhsCollectorState.tasks[0].name = '桌面应用安装教程';
+      Object.assign(previewStore.xhsCollectorState.materials[0], {
+        title: '安装前先确认系统与安装包',
+        author: '软件入门指南',
+        bodyText: '下载前确认操作系统版本，并从官方页面下载安装包。安装完成后应能从开始菜单启动应用。',
+      });
+      Object.assign(previewStore.xhsCollectorState.materials[1], {
+        title: '第一次启动与基础配置',
+        author: '新手配置笔记',
+        bodyText: '第一次启动时按界面提示选择保存位置。若应用无法启动，可重新核对系统版本与安装包来源。',
+      });
+      previewStore.xhsAnalysisState.records = [
+        { materialId: 'm1', contentHash: 'v1-11111111', status: 'succeeded', brief: { oneLineSummary: '确认系统、安装包来源与安装后的成功表现。', evidence: [{ id: 'E1', quote: '下载前确认操作系统版本，并从官方页面下载安装包。' }] } },
+        { materialId: 'm2', contentHash: 'v1-22222222', status: 'succeeded', brief: { oneLineSummary: '整理第一次启动和失败后的处理方法。', evidence: [{ id: 'E1', quote: '若应用无法启动，可重新核对系统版本与安装包来源。' }] } },
+      ];
+      previewStore.xhsPurposeReportState.reports[0] = {
+        taskId: 'task-1', status: 'succeeded', error: null, reportId: 'report-tutorial-preview', sourceRevision: 'rev-ui-1ae372f4',
+        selectedMaterialIds: ['m1', 'm2'], reportPreset: 'tutorial', reportPresetSelection: 'tutorial', familiarityLevel: 'beginner', supplementMode: 'source_only',
+        goal: '我什么都不会，想完成桌面应用安装', constraints: ['只按素材提供的步骤操作'],
+        goalUnderstanding: '完成桌面应用的下载、安装与第一次启动。',
+        executiveSummary: '先完成安装前确认，再按顺序安装并检查能否正常启动；素材没有说明的内容保留为待核实项。',
+        preflightActions: [{
+          title: '确认安装包', purpose: '避免下载不适用于当前电脑的文件。',
+          steps: ['查看电脑的操作系统版本。', '从素材提到的官方页面下载安装包。'],
+          successCheck: '安装包来源和适用系统都已确认。', fallback: '无法确认时先停止安装，重新查看素材来源。',
+          origin: 'source', citationIds: ['C1'], verificationStatus: 'supported', verificationNote: '',
+        }],
+        themes: [{ text: '安装前要先确认系统版本和安装包来源。', origin: 'source', citationIds: ['C1'], verificationStatus: 'supported', verificationNote: '' }],
+        conflicts: [{ text: '素材没有说明所有系统版本是否都受支持。', origin: 'source', citationIds: ['C1'], verificationStatus: 'needs_verification', verificationNote: '安装前核对官方支持范围。' }],
+        informationGaps: ['缺少应用所需磁盘空间', '缺少失败时的错误提示说明'],
+        nextActions: [
+          { text: '确认操作系统版本。', origin: 'source', citationIds: ['C1'], verificationStatus: 'supported', verificationNote: '' },
+          { text: '从官方页面下载安装包并完成安装。', origin: 'source', citationIds: ['C1'], verificationStatus: 'supported', verificationNote: '' },
+          { text: '从开始菜单启动应用，按提示选择保存位置。', origin: 'source', citationIds: ['C1', 'C2'], verificationStatus: 'supported', verificationNote: '' },
+        ],
+        supplements: [],
+        citations: [{ id: 'C1', materialId: 'm1', evidenceIds: ['E1'] }, { id: 'C2', materialId: 'm2', evidenceIds: ['E1'] }],
+        confidence: 'medium', modelVersion: 'preview', generatedAt: '2026-09-05T09:00:00.000Z', updatedAt: '2026-09-05T09:00:00.000Z',
+      };
+    }
+    let previewAuthenticated = true;
+    window.chrome = {
+      runtime: {
+        lastError: null,
+        getURL: (path) => `../${path}`,
+        sendMessage: async (message) => {
+          if (message.type === 'XMC_GET_AUTH_STATUS') return cloudAccountPreview
+            ? { ok: true, status: { mode: 'cloud', authenticated: previewAuthenticated, account: previewAuthenticated ? { id: 'auth0|preview', name: '旅行测试用户', email: 'traveler@example.com', picture: '' } : null } }
+            : { ok: true, status: { mode: 'local', authenticated: false, account: null } };
+          if (message.type === 'XMC_AUTH_SIGN_IN') {
+            previewAuthenticated = true;
+            return { ok: true, status: { mode: 'cloud', authenticated: true, account: { id: 'auth0|preview', name: '旅行测试用户', email: 'traveler@example.com', picture: '' } } };
+          }
+          if (message.type === 'XMC_AUTH_SIGN_OUT') {
+            previewAuthenticated = false;
+            return { ok: true, status: { mode: 'cloud', authenticated: false, account: null } };
+          }
+          if (message.type === 'XMC_GET_SETTINGS') return { ok: true, settings: { configured: true, baseUrl: 'https://api.deepseek.com/v1', model: 'deepseek-chat', hasApiKey: true } };
+          return { ok: true };
+        },
+      },
+      storage: {
+        local: {
+          get: (key, callback) => callback({ [key]: previewStore[key] }),
+          set: (values, callback) => { Object.assign(previewStore, values); callback(); },
+        },
+        onChanged: { addListener: () => undefined },
+      },
+    };
+    const previewSendMessage = window.chrome.runtime.sendMessage;
+    window.chrome.runtime.sendMessage = (message, callback) => {
+      const result = previewSendMessage(message);
+      Promise.resolve(result).then((value) => callback?.(value));
+      return result;
+    };
+  </script>
+  <script src="../src/runtime-config.js"></script>
+  <script src="../src/material.js"></script>
+  <script src="../src/xhs-adapter.js"></script>
+  <script src="../src/repository.js"></script>
+  <script src="../src/analysis-repository.js"></script>
+  <script src="../src/report-repository.js"></script>
+  <script src="../src/tutorial-manual-repository.js"></script>
+  <script src="../src/provider-presets.js"></script>
+  <script src="../src/ui-model.js"></script>
+  <script src="../src/vendor/html2canvas.min.js"></script>
+  <script src="../src/workbook-export.js"></script>
+  <script src="../src/content.js"></script>
+  <script>
+    window.setTimeout(() => {
+      document.querySelector('.xmc-dock')?.click();
+      if (cloudAccountPreview) document.querySelector('.xmc-settings-toggle')?.click();
+      else {
+        document.querySelector('[data-view="report"]')?.click();
+        if (tutorialReportPreview) document.querySelector('[data-report-step="3"]')?.click();
+      }
+    }, 100);
+  </script>
+</body>
+</html>

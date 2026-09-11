@@ -1,0 +1,62 @@
+{
+  "provenance": {
+    "note": "Synthetic regression fixture; parentheses variant."
+  },
+  "report": {
+    "reportId": "fixture-report-parentheses",
+    "sourceRevision": "rev-fixture-list-counts",
+    "goalUnderstanding": "用户希望整理一份城市游览指南，未提供额外限制。",
+    "executiveSummary": "原文编号清单共9个（括号变体）：青松公园、中央广场、河畔步道、旧城门、山景平台、创意园、湖心市集、滨水公园、观景台。",
+    "themes": [
+      {
+        "text": "原文编号清单共9个：青松公园、中央广场、河畔步道、旧城门、山景平台、创意园、湖心市集、滨水公园、观景台。",
+        "origin": "source",
+        "citationIds": [
+          "C1"
+        ]
+      },
+      {
+        "text": "路线素材建议从北门出发并在滨水公园结束。",
+        "origin": "source",
+        "citationIds": [
+          "C2"
+        ]
+      }
+    ],
+    "conflicts": [],
+    "informationGaps": [
+      "素材未提供各地点之间的具体距离。"
+    ],
+    "nextActions": [
+      {
+        "text": "原文编号清单共9个：青松公园、中央广场、河畔步道、旧城门、山景平台、创意园、湖心市集、滨水公园、观景台。",
+        "origin": "source",
+        "citationIds": [
+          "C1"
+        ]
+      }
+    ],
+    "preflightActions": [],
+    "supplements": [],
+    "citations": [
+      {
+        "id": "C1",
+        "materialId": "fixture-material-list",
+        "evidenceIds": [
+          "E1",
+          "E2"
+        ]
+      },
+      {
+        "id": "C2",
+        "materialId": "fixture-material-route",
+        "evidenceIds": [
+          "E1",
+          "E2"
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "modelVersion": "fixture-model"
+  }
+}

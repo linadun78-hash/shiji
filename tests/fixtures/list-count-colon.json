@@ -1,0 +1,114 @@
+{
+  "provenance": {
+    "note": "Synthetic regression fixture; no user content."
+  },
+  "request": {
+    "goal": "整理一份城市游览指南",
+    "constraints": [],
+    "selectedMaterials": [
+      {
+        "materialId": "fixture-material-list",
+        "title": "九项城市地点清单（合成夹具）",
+        "author": "fixture-author",
+        "bodyText": "合成回归数据，不对应真实笔记。",
+        "sourceUrl": "https://example.invalid/material/list",
+        "capturedAt": "2026-01-01T00:00:00.000Z",
+        "contentHash": "fixture-hash-list",
+        "evidence": [
+          {
+            "id": "E1",
+            "quote": "1️⃣青松公园 交通信息。2️⃣中央广场 交通信息。3️⃣河畔步道 交通信息。4️⃣旧城门 交通信息。5️⃣山景平台 交通信息。"
+          },
+          {
+            "id": "E2",
+            "quote": "6️⃣创意园 交通信息。7️⃣湖心市集 交通信息。8️⃣滨水公园 交通信息。9️⃣观景台 交通信息。"
+          }
+        ]
+      },
+      {
+        "materialId": "fixture-material-route",
+        "title": "城市步行路线（合成夹具）",
+        "author": "fixture-author",
+        "bodyText": "合成回归数据，仅用于协议测试。",
+        "sourceUrl": "https://example.invalid/material/route",
+        "capturedAt": "2026-01-01T00:00:01.000Z",
+        "contentHash": "fixture-hash-route",
+        "evidence": [
+          {
+            "id": "E1",
+            "quote": "从北门出发，依次经过河畔步道与中央广场。"
+          },
+          {
+            "id": "E2",
+            "quote": "傍晚在滨水公园结束行程。"
+          }
+        ]
+      }
+    ],
+    "sourceRevision": "rev-fixture-list-counts",
+    "reportPreset": "travel",
+    "familiarityLevel": "basic",
+    "supplementMode": "source_only",
+    "task": {
+      "id": "fixture-task"
+    },
+    "reportFormat": "guide"
+  },
+  "report": {
+    "reportId": "fixture-report-colon",
+    "sourceRevision": "rev-fixture-list-counts",
+    "goalUnderstanding": "用户希望整理一份城市游览指南，未提供额外限制。",
+    "executiveSummary": "原文编号清单共9个：青松公园、中央广场、河畔步道、旧城门、山景平台、创意园、湖心市集、滨水公园、观景台。",
+    "themes": [
+      {
+        "text": "原文编号清单共9个：青松公园、中央广场、河畔步道、旧城门、山景平台、创意园、湖心市集、滨水公园、观景台。",
+        "origin": "source",
+        "citationIds": [
+          "C1"
+        ]
+      },
+      {
+        "text": "路线素材建议从北门出发并在滨水公园结束。",
+        "origin": "source",
+        "citationIds": [
+          "C2"
+        ]
+      }
+    ],
+    "conflicts": [],
+    "informationGaps": [
+      "素材未提供各地点之间的具体距离。"
+    ],
+    "nextActions": [
+      {
+        "text": "原文编号清单共9个：青松公园、中央广场、河畔步道、旧城门、山景平台、创意园、湖心市集、滨水公园、观景台。",
+        "origin": "source",
+        "citationIds": [
+          "C1"
+        ]
+      }
+    ],
+    "preflightActions": [],
+    "supplements": [],
+    "citations": [
+      {
+        "id": "C1",
+        "materialId": "fixture-material-list",
+        "evidenceIds": [
+          "E1",
+          "E2"
+        ]
+      },
+      {
+        "id": "C2",
+        "materialId": "fixture-material-route",
+        "evidenceIds": [
+          "E1",
+          "E2"
+        ]
+      }
+    ],
+    "confidence": "medium",
+    "modelVersion": "fixture-model"
+  }
+}
